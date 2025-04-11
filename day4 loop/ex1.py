@@ -1,0 +1,10 @@
+#program to print  hello 10 times:
+print("hello!")
+print("hello!")
+print("hello!")
+print("hello!")
+print("hello!")
+print("hello!")
+print("hello!")
+print("hello!")
+print("hello!")
