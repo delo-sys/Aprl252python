@@ -1,0 +1,2 @@
+assume a f cointaing a series of intergers is name  number.txt  and exist on the computer disk
+.Write a program that reads all number stored in the file and caluclate their total

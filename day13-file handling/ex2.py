@@ -1,0 +1,7 @@
+f=open("test.txt","r")
+contents=f.readline()
+print(contents)
+contents=f.readline()
+print(contents)
+contents=f.readline()
+print(contents)
