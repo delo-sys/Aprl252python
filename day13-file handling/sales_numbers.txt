@@ -1,0 +1,7 @@
+Sales number 1: 50000,
+Sales number 2: 40000,
+Sales number 3: 60000,
+Sales number 4: 50000,
+Sales number 5: 5000,
+Sales number 6: 70000,
+Sales number 7: 60,
