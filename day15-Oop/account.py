@@ -40,9 +40,19 @@ def balance(acc):
 
 def add(acc):
     print("Add a new account")
-    accNo = int(input("Enter the account number: "))
+    while True:
+        try:
+            accNo = int(input("Enter the account number: "))
+            break
+        except ValueError:
+            print("Please enter a valid integer for the account number.")
     accname = input("Enter the account name: ")
-    accbalance = float(input("Enter the account balance: "))
+    while True:
+        try:
+            accbalance = float(input("Enter the account balance: "))
+            break
+        except ValueError:
+            print("Please enter a valid number for the account balance.")
     new_account = Account(accNo, accname, accbalance)
     print(f"Account {new_account.acc_name} added successfully.")
     return new_account
@@ -58,16 +68,25 @@ def withdraw(acc):
     print(f"Withdraw of {amount} successful")
 
 def main():
-    Account= {}
-    choice=0
+    Account = None  # Start with no account
+    choice = 0
     while choice != 5:
         choice = get_menuchoice()
         if choice == 1:
-            balance(Account)
+            if Account:
+                balance(Account)
+            else:
+                print("No account found. Please add an account first.")
         elif choice == 2:
             Account = add(Account)
         elif choice == 3:
-            deposit(Account)
+            if Account:
+                deposit(Account)
+            else:
+                print("No account found. Please add an account first.")
         elif choice == 4:
-            withdraw(Account)
+            if Account:
+                withdraw(Account)
+            else:
+                print("No account found. Please add an account first.")
 main()
