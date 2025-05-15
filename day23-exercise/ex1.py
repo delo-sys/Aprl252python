@@ -64,11 +64,10 @@ def updatebook():
         txtBookPriceUpdate.insert(0,record[1])
 
     def savechanges():
-        conn = sqlite3.connect("books.db")
+        # conn = sqlite3.connect("books.db")
         c = conn.cursor()
         btitle = txtBookTitleUpdate.get()
         bprice = txtBookPriceUpdate.get()
-        # Use parameterized query and pass the correct rowid
         c.execute(
             "UPDATE Books SET BookTitle = ?, BookPrice = ? WHERE rowid = ?",
             (btitle, bprice, bookID)
