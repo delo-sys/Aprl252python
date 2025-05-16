@@ -19,11 +19,11 @@ def getMenu():
         print("1-purchase item")
         print("2-show items")
         print("3-Get total")
-        print("4-quit the program")
+        print("4-Exit")
         choice=int(input("Enter a number(1-4)"))
     return choice
 
-def purchaseitem():
+def purchase_item():
     print("1-Jacket,price=59.95")
     print("2-Designer jeans,price=34.94")
     print("3-shirt,price=24.95")
@@ -44,27 +44,30 @@ def purchaseitem():
     choice=getMenu()
     return choice
 
-def show_items(itemsList):
+def showItems(itemsList):
     for item in itemsList:
-        print(f"{item.description},{item.price:.2f}")
-def get_total(itemsList):
+       print(f"{item.description} {item.price}")
+    
+def showTotal(itemsList):
     total=0
     for item in itemsList:
         total+=item.price
-        print(f"Total price of items in the cart is KShs {total:.2f}")
+    print(f"Total amount is KShs {total:.2f}")
+
 def main():
     choice=getMenu()
-    if choice==1:
-        purchaseitem()
-        main()
-    elif choice==2:
-        show_items(itemsList)
-        main()
-    elif choice==3:
-        get_total(itemsList)
-        main()
-    elif choice==4:
-
-        SystemExit()
-
+    while choice!=4:
+        if choice==1:
+            purchase_item()
+            main()
+        elif choice==2:
+            showItems(itemsList)
+            main()
+        elif choice==3:
+            showTotal(itemsList)
+            main()
+        elif choice==4:
+            SystemExit()
+            main()    
+            
 main()
