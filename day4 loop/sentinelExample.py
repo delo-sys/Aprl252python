@@ -8,7 +8,7 @@ while proceed:
     if respond.lower()=='n':
         proceed=False
 print(f" monthy budget minus total expenses is KSH {budgetAmount-totalExpenses:.2f}")
-if over_the_budget:
+if totalExpenses > budgetAmount:
     print("You have exceeded your budget")
-else:under_the_budget
-print("You are within your budget")
+else:
+    print("You are within your budget")
